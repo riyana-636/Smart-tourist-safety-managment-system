@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - SafeTour</title>
+    <link rel="stylesheet" href="../css/signup.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-header">
+            <div class="brand">
+                <a href="../index.html">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>SafeTour</span>
+                </a>
+            </div>
+            <div class="login-link">
+                <span>Already have an account?</span>
+                <a href="login.html">Sign In</a>
+            </div>
+        </div>
+        
+        <div class="signup-content">
+            <div class="signup-form-container">
+                <div class="form-header">
+                    <h1>Join SafeTour</h1>
+                    <p>Create your account and start traveling safely</p>
+                </div>
+                
+                <form class="signup-form" id="signupForm">
+                    <div class="progress-bar">
+                        <div class="progress-step active" data-step="1">
+                            <span>1</span>
+                            <label>Personal Info</label>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <span>2</span>
+                            <label>Contact Details</label>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <span>3</span>
+                            <label>Safety Setup</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" id="step1">
+                        <h3>Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="dateOfBirth">Date of Birth</label>
+                                <div class="input-group">
+                                    <i class="fas fa-calendar"></i>
+                                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <div class="input-group">
+                                    <i class="fas fa-users"></i>
+                                    <select id="gender" name="gender" required>
+                                        <option value="">Select gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                        <option value="prefer-not-to-say">Prefer not to say</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn-next" onclick="nextStep()">Next Step</button>
+                    </div>
+                    
+                    <!-- Step 2: Contact Details -->
+                    <div class="form-step" id="step2">
+                        <h3>Contact Details</h3>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-group">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="country">Country/Region</label>
+                            <div class="input-group">
+                                <i class="fas fa-globe"></i>
+                                <select id="country" name="country" required>
+                                    <option value="">Select your country</option>
+                                    <option value="US">United States</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="JP">Japan</option>
+                                    <option value="IN">India</option>
+                                    <option value="BR">Brazil</option>
+                                    <option value="MX">Mexico</option>
+                                    <option value="IT">Italy</option>
+                                    <option value="ES">Spain</option>
+                                    <option value="NL">Netherlands</option>
+                                    <option value="SE">Sweden</option>
+                                    <option value="NO">Norway</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <div class="input-group">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="address" name="address" placeholder="Enter your address" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <div class="input-group">
+                                    <i class="fas fa-city"></i>
+                                    <input type="text" id="city" name="city" placeholder="City" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="zipCode">ZIP/Postal Code</label>
+                                <div class="input-group">
+                                    <i class="fas fa-mail-bulk"></i>
+                                    <input type="text" id="zipCode" name="zipCode" placeholder="ZIP Code" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
+                            <button type="button" class="btn-next" onclick="nextStep()">Next Step</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Safety Setup -->
+                    <div class="form-step" id="step3">
+                        <h3>Safety & Security Setup</h3>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                                    <i class="fas fa-eye" id="eyeIcon1"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar">
+                                    <div class="strength-fill"></div>
+                                </div>
+                                <span class="strength-text">Password strength: Weak</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                                <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">
+                                    <i class="fas fa-eye" id="eyeIcon2"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emergencyContactName">Emergency Contact Name</label>
+                            <div class="input-group">
+                                <i class="fas fa-user-friends"></i>
+                                <input type="text" id="emergencyContactName" name="emergencyContactName" placeholder="Emergency contact full name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emergencyContactPhone">Emergency Contact Phone</label>
+                            <div class="input-group">
+                                <i class="fas fa-phone-alt"></i>
+                                <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" placeholder="Emergency contact phone number" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="emergencyContactRelation">Relationship</label>
+                            <div class="input-group">
+                                <i class="fas fa-heart"></i>
+                                <select id="emergencyContactRelation" name="emergencyContactRelation" required>
+                                    <option value="">Select relationship</option>
+                                    <option value="parent">Parent</option>
+                                    <option value="spouse">Spouse/Partner</option>
+                                    <option value="sibling">Sibling</option>
+                                    <option value="friend">Friend</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="preferences">
+                            <h4>Notification Preferences</h4>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="safetyAlerts" checked>
+                                <span class="checkmark"></span>
+                                Receive safety alerts and warnings
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="emergencyNotifications" checked>
+                                <span class="checkmark"></span>
+                                Enable emergency notifications
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="travelTips">
+                                <span class="checkmark"></span>
+                                Get travel tips and safety recommendations
+                            </label>
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="communityUpdates">
+                                <span class="checkmark"></span>
+                                Community updates and travel buddy connections
+                            </label>
+                        </div>
+                        
+                        <div class="terms">
+                            <label class="checkbox-container required">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                            </label>
+                            <label class="checkbox-container required">
+                                <input type="checkbox" name="dataProcessing" required>
+                                <span class="checkmark"></span>
+                                I consent to the processing of my personal data for safety purposes
+                            </label>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
+                            <button type="submit" class="btn-signup">Create Account</button>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="social-signup">
+                    <div class="divider">
+                        <span>or sign up with</span>
+                    </div>
+                    <div class="social-buttons">
+                        <button type="button" class="btn-social google">
+                            <i class="fab fa-google"></i>
+                            Google
+                        </button>
+                        <button type="button" class="btn-social facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="signup-benefits">
+                <h2>Why Choose SafeTour?</h2>
+                <div class="benefits-list">
+                    <div class="benefit">
+                        <i class="fas fa-shield-alt"></i>
+                        <div>
+                            <h3>Comprehensive Safety</h3>
+                            <p>Advanced safety features designed specifically for travelers</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-globe-americas"></i>
+                        <div>
+                            <h3>Global Coverage</h3>
+                            <p>Safety information and support for destinations worldwide</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>24/7 Support</h3>
+                            <p>Round-the-clock emergency assistance and support</p>
+                        </div>
+                    </div>
+                    <div class="benefit">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div>
+                            <h3>Mobile App</h3>
+                            <p>Access all features on-the-go with our mobile application</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <blockquote>
+                        "SafeTour gave me the confidence to explore new destinations. The real-time alerts and emergency features are a game-changer!"
+                    </blockquote>
+                    <cite>- Sarah M., Frequent Traveler</cite>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="../js/signup.js"></script>
+</body>
+</html>
