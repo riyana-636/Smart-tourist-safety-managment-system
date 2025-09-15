@@ -1,4 +1,4 @@
-# SafeTour - Tourist Safety Platform
+# Travault - Tourist Safety Platform
 
 A comprehensive tourist safety platform with professional login and signup functionality.
 

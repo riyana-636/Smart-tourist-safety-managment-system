@@ -1,4 +1,4 @@
-// Login Page JavaScript for SafeTour
+// Login Page JavaScript for Travault
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {

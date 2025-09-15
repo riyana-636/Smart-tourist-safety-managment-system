@@ -1,4 +1,4 @@
-// Signup Page JavaScript for SafeTour
+// Signup Page JavaScript for Travault
 
 // Global variables
 let currentStep = 1;

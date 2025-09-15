@@ -1,4 +1,4 @@
-// Main JavaScript for SafeTour - Tourist Safety Platform
+// Main JavaScript for Travault - Tourist Safety Platform
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
